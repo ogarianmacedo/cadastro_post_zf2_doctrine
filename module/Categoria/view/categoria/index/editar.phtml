@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-6">
+        <h2>Editar Categoria</h2>
+    </div>
+    <div class="col-md-6">
+        <br>
+        <a href="<?php echo $this->url('categoria/default', array('controller' => 'categoria')); ?>" class="btn btn-default pull-right">Voltar</a>
+    </div>
+</div>
+
+<hr>
+
+<?php
+/**
+ * @var $form \Zend\Form\Form
+ */
+$form = $this->form;
+
+if($this->success)
+    echo '<div class="alert alert-success">' . $this->success[0] . '<button type="button" class="close" data-dismiss="alert">x</button></div>';
+if($this->error)
+    echo '<div class="alert alert-danger">' . $this->error[0] . '<button type="button" class="close" data-dismiss="alert">x</button></div>';
+
+$this->formElementErrors()
+    ->setMessageOpenFormat('<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">x</button>')
+    ->setMessageCloseString('</div>')
+    ->render($form);
+
+$form->setAttribute('action', $this->url('categoria/default', array('controller' => 'categoria', 'action' => 'editar', 'id' => $this->id)));
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+<div class="row">
+    <div class="col-md-4">
+        <?php echo $this->formRow($form->get('nome'));?>
+    </div>
+    <div class="col-md-4">
+        <br>
+        <?php echo  $this->formRow($form->get('submit'));?>
+    </div>
+</div>
+<?php
+echo $this->form()->closetag();
+?>
+
+

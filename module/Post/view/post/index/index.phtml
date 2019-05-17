@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-6">
+        <h2>Index Postagens</h2>
+    </div>
+    <div class="col-md-6">
+        <br>
+        <a href="<?php echo $this->url('post/default', array('controller' => 'post', 'action' => 'inserir')); ?>"
+           class="btn btn-default pull-right">Cadastrar Postagem</a>
+    </div>
+</div>
+
+<hr>
+
+<?php
+if ($this->success)
+    echo '<div class="alert alert-success">' . $this->success[0] . '<button type="button" class="close" data-dismiss="alert">x</button></div>';
+if ($this->error)
+    echo '<div class="alert alert-danger">' . $this->error[0] . '<button type="button" class="close" data-dismiss="alert">x</button></div>';
+?>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>#Titulo</th>
+        <th>#Descrição</th>
+        <th>#Categoria</th>
+        <th>#Autor</th>
+        <th>#Status</th>
+        <th>#Data Postagem</th>
+        <th>#Data Atualização</th>
+        <th>#Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    /**
+     * @var $entity Post\Entity\Post
+     */
+    ?>
+    <?php if ($this->data): ?>
+        <?php foreach ($this->data as $entity): ?>
+            <tr>
+                <td><?php echo $entity->getTitulo(); ?></td>
+                <td><?php echo $entity->getDescricao(); ?></td>
+                <td><?php echo $entity->getCategoriaId()->getNome(); ?></td>
+                <td><?php echo $entity->getAutorId()->getNome(); ?></td>
+                <td><?php echo ($entity->getAtivo()) ? 'ATIVO' : 'INATIVO'; ?></td>
+                <td><?php echo $entity->getCreated()->format('d/m/Y'); ?></td>
+                <td><?php echo ($entity->getUpdated()) ? $entity->getUpdated()->format('d/m/Y') : ''; ?></td>
+                <td>
+                    <a href="<?php echo $this->url('post/default', array('controller' => 'post', 'action' => 'editar', 'id' => $entity->getId())); ?>"
+                       class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="<?php echo $this->url('post/default', array('controller' => 'post', 'action' => 'excluir', 'id' => $entity->getId())); ?>"
+                       class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>Não há postagens cadastradas!</p>
+    <?php endif; ?>
+    </tbody>
+</table>
+
+<?php echo $this->paginationControl($this->data, 'Sliding', 'partials/paginator', array('route' => 'post/paginator')); ?>
