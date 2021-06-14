@@ -12,13 +12,20 @@ use Zend\Form\Element\Textarea;
 use Zend\Form\Form;
 use Post\Form\PostFilter;
 
+/**
+ * Class PostForm
+ * @package Post\Form
+ */
 class PostForm extends Form implements ObjectManagerAwareInterface
 {
     protected $objectManager;
 
+    /**
+     * PostForm constructor.
+     * @param ObjectManager $objectManager
+     */
     public function __construct(ObjectManager $objectManager)
     {
-
         $this->setObjectManager($objectManager);
 
         parent::__construct(null);
@@ -106,7 +113,6 @@ class PostForm extends Form implements ObjectManagerAwareInterface
         $this->add($button);
 
         $this->setInputFilter(new PostFilter($autorId->getValueOptions()));
-
     }
 
     /**

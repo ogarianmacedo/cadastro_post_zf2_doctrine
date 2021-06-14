@@ -6,6 +6,10 @@ use Autor\Service\AutorService;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * Class Module
+ * @package Autor
+ */
 class Module
 {
     public function onBootstrap(MvcEvent $e)

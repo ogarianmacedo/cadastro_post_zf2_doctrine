@@ -5,8 +5,16 @@ namespace Post\Service;
 use Base\Service\AbstractService;
 use Doctrine\ORM\EntityManager;
 
+/**
+ * Class PostService
+ * @package Post\Service
+ */
 class PostService extends AbstractService
 {
+    /**
+     * PostService constructor.
+     * @param EntityManager $em
+     */
     public function __construct(EntityManager $em)
     {
         $this->entity = 'Post\Entity\Post';
@@ -25,5 +33,4 @@ class PostService extends AbstractService
 
         return parent::save($data);
     }
-
 }

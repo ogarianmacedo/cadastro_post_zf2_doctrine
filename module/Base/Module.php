@@ -13,6 +13,10 @@ use Zend\Mvc\I18n\Translator;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * Class Module
+ * @package Base
+ */
 class Module
 {
     public function onBootstrap(MvcEvent $e)

@@ -7,6 +7,10 @@ use Post\Service\PostService;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * Class Module
+ * @package Post
+ */
 class Module
 {
     public function onBootstrap(MvcEvent $e)

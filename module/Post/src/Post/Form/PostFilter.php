@@ -9,10 +9,18 @@ use Zend\InputFilter\InputFilter;
 use Zend\Validator\InArray;
 use Zend\Validator\NotEmpty;
 
+/**
+ * Class PostFilter
+ * @package Post\Form
+ */
 class PostFilter extends InputFilter
 {
     protected $autorId;
 
+    /**
+     * PostFilter constructor.
+     * @param array $autorId
+     */
     public function __construct(Array $autorId = array())
     {
         $this->autorId = $autorId;
@@ -50,7 +58,6 @@ class PostFilter extends InputFilter
             ->attach(new StringTrim());
         $autor->getValidatorChain()->attach($inArray);
         $this->add($autor);
-
     }
 
     /**

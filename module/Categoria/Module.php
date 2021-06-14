@@ -6,6 +6,10 @@ use Categoria\Service\CategoriaService;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * Class Module
+ * @package Categoria
+ */
 class Module
 {
     public function onBootstrap(MvcEvent $e)

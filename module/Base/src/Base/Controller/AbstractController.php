@@ -7,6 +7,10 @@ use Zend\View\Model\ViewModel;
 use Zend\Paginator\Paginator;
 use Zend\Paginator\Adapter\ArrayAdapter;
 
+/**
+ * Class AbstractController
+ * @package Base\Controller
+ */
 abstract class AbstractController extends AbstractActionController
 {
     protected $em;
@@ -17,6 +21,9 @@ abstract class AbstractController extends AbstractActionController
     protected $form;
     protected $itemCountPerPage = 5;
 
+    /**
+     * AbstractController constructor.
+     */
     abstract function __construct();
 
     /**

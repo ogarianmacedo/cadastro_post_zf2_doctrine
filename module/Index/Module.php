@@ -5,6 +5,10 @@ namespace Index;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * Class Module
+ * @package Index
+ */
 class Module
 {
     public function onBootstrap(MvcEvent $e)

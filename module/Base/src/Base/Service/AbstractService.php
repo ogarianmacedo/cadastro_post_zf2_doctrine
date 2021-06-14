@@ -5,11 +5,19 @@ namespace Base\Service;
 use Doctrine\ORM\EntityManager;
 use Zend\Stdlib\Hydrator\ClassMethods;
 
+/**
+ * Class AbstractService
+ * @package Base\Service
+ */
 abstract class AbstractService
 {
     protected $em;
     protected $entity;
 
+    /**
+     * AbstractService constructor.
+     * @param EntityManager $em
+     */
     public function __construct(EntityManager $em)
     {
         $this->em = $em;

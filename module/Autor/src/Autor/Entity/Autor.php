@@ -156,5 +156,4 @@ class Autor extends AbstractEntity
 
         return $this;
     }
-
 }

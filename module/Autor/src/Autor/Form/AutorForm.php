@@ -7,8 +7,15 @@ use Zend\Form\Element\Email;
 use Zend\Form\Element\Text;
 use Zend\Form\Form;
 
+/**
+ * Class AutorForm
+ * @package Autor\Form
+ */
 class AutorForm extends Form
 {
+    /**
+     * AutorForm constructor.
+     */
     public function __construct()
     {
         parent::__construct(null);
@@ -42,5 +49,4 @@ class AutorForm extends Form
 
         $this->setInputFilter(new AutorFilter());
     }
-
 }

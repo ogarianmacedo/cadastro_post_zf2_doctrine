@@ -7,8 +7,15 @@ use Zend\Form\Element\Text;
 use Zend\Form\Form;
 use Categoria\Form\CategoriaFilter;
 
+/**
+ * Class CategoriaForm
+ * @package Categoria\Form
+ */
 class CategoriaForm extends Form
 {
+    /**
+     * CategoriaForm constructor.
+     */
     public function __construct()
     {
         parent::__construct(null);
