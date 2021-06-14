@@ -4,8 +4,15 @@ namespace Categoria\Controller;
 
 use Base\Controller\AbstractController;
 
+/**
+ * Class IndexController
+ * @package Categoria\Controller
+ */
 class IndexController extends AbstractController
 {
+    /**
+     * IndexController constructor.
+     */
     public function __construct()
     {
         $this->form = 'Categoria\Form\CategoriaForm';
@@ -14,5 +21,4 @@ class IndexController extends AbstractController
         $this->service = 'Categoria\Service\CategoriaService';
         $this->entity = 'Categoria\Entity\Categoria';
     }
-
 }

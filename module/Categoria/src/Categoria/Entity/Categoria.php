@@ -30,8 +30,6 @@ class Categoria extends AbstractEntity
      */
     private $nome;
 
-
-
     /**
      * Get id
      *

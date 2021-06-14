@@ -38,24 +38,15 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
      */
     public static $lazyPropertiesDefaults = array();
 
-
-
     /**
      * @param \Closure $initializer
      * @param \Closure $cloner
      */
     public function __construct($initializer = null, $cloner = null)
     {
-
         $this->__initializer__ = $initializer;
         $this->__cloner__      = $cloner;
     }
-
-
-
-
-
-
 
     /**
      * 
@@ -172,7 +163,6 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
         return self::$lazyPropertiesDefaults;
     }
 
-    
     /**
      * {@inheritDoc}
      */
@@ -181,7 +171,6 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
         if ($this->__isInitialized__ === false) {
             return (int)  parent::getId();
         }
-
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', array());
 
@@ -193,7 +182,6 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
      */
     public function getNome()
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNome', array());
 
         return parent::getNome();
@@ -204,7 +192,6 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
      */
     public function setNome($nome)
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNome', array($nome));
 
         return parent::setNome($nome);
@@ -215,7 +202,6 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
      */
     public function getEmail()
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmail', array());
 
         return parent::getEmail();
@@ -226,7 +212,6 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
      */
     public function setEmail($email)
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEmail', array($email));
 
         return parent::setEmail($email);
@@ -237,7 +222,6 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
      */
     public function getCreated()
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCreated', array());
 
         return parent::getCreated();
@@ -248,7 +232,6 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
      */
     public function setCreated()
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCreated', array());
 
         return parent::setCreated();
@@ -259,7 +242,6 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
      */
     public function getUpdated()
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpdated', array());
 
         return parent::getUpdated();
@@ -270,7 +252,6 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
      */
     public function setUpdated()
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdated', array());
 
         return parent::setUpdated();
@@ -281,10 +262,8 @@ class Autor extends \Autor\Entity\Autor implements \Doctrine\ORM\Proxy\Proxy
      */
     public function toArray()
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'toArray', array());
 
         return parent::toArray();
     }
-
 }

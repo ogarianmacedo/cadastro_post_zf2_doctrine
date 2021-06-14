@@ -38,28 +38,18 @@ class Categoria extends \Categoria\Entity\Categoria implements \Doctrine\ORM\Pro
      */
     public static $lazyPropertiesDefaults = array();
 
-
-
     /**
      * @param \Closure $initializer
      * @param \Closure $cloner
      */
     public function __construct($initializer = null, $cloner = null)
     {
-
         $this->__initializer__ = $initializer;
         $this->__cloner__      = $cloner;
     }
 
-
-
-
-
-
-
     /**
-     * 
-     * @return array
+     * @return string[]
      */
     public function __sleep()
     {
@@ -70,9 +60,6 @@ class Categoria extends \Categoria\Entity\Categoria implements \Doctrine\ORM\Pro
         return array('__isInitialized__', '' . "\0" . 'Categoria\\Entity\\Categoria' . "\0" . 'id', '' . "\0" . 'Categoria\\Entity\\Categoria' . "\0" . 'nome');
     }
 
-    /**
-     * 
-     */
     public function __wakeup()
     {
         if ( ! $this->__isInitialized__) {
@@ -92,9 +79,6 @@ class Categoria extends \Categoria\Entity\Categoria implements \Doctrine\ORM\Pro
         }
     }
 
-    /**
-     * 
-     */
     public function __clone()
     {
         $this->__cloner__ && $this->__cloner__->__invoke($this, '__clone', array());
@@ -172,7 +156,6 @@ class Categoria extends \Categoria\Entity\Categoria implements \Doctrine\ORM\Pro
         return self::$lazyPropertiesDefaults;
     }
 
-    
     /**
      * {@inheritDoc}
      */
@@ -181,7 +164,6 @@ class Categoria extends \Categoria\Entity\Categoria implements \Doctrine\ORM\Pro
         if ($this->__isInitialized__ === false) {
             return (int)  parent::getId();
         }
-
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', array());
 
@@ -193,7 +175,6 @@ class Categoria extends \Categoria\Entity\Categoria implements \Doctrine\ORM\Pro
      */
     public function setNome($nome)
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNome', array($nome));
 
         return parent::setNome($nome);
@@ -204,7 +185,6 @@ class Categoria extends \Categoria\Entity\Categoria implements \Doctrine\ORM\Pro
      */
     public function getNome()
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNome', array());
 
         return parent::getNome();
@@ -215,10 +195,8 @@ class Categoria extends \Categoria\Entity\Categoria implements \Doctrine\ORM\Pro
      */
     public function toArray()
     {
-
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'toArray', array());
 
         return parent::toArray();
     }
-
 }
